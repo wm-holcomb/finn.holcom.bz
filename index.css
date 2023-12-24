@@ -1,0 +1,35 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+#bass {
+  height: max(75dvh, 5rem);
+  width: 100dvw;
+}
+
+@font-face {
+  font-family: 'Hillentone';
+  src: url('Hillentone.woff') format('woff');
+}
+
+h1 {
+  font-family: 'Hillentone';
+  font-size: min(30vh, 15rem);
+  text-align: center;
+  margin-block: -2rem -3rem;
+
+  & a {
+    color: #000;
+    text-decoration: none;
+
+    &:hover {
+      color: #7A2F00;
+    }
+  }
+}
+
+#onewheel-eastern {
+  height: max(85dvh, 10rem);
+  width: 100dvw;
+}
