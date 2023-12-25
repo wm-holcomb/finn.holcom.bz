@@ -1,11 +1,27 @@
+:root {
+  --fg: #000;
+  --bg: #FFF;
+  --highlight: #7A2F00;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg: #FFF;
+    --bg: #000;
+    --highlight: #D7665A;
+  }
+}
+
 html, body {
   margin: 0;
   padding: 0;
+  background-color: var(--bg);
+  color: var(--fg);
 }
 
 #bass {
   height: max(75dvh, 5rem);
-  width: 100dvw;
+  width: 100%;
 }
 
 @font-face {
@@ -20,16 +36,17 @@ h1 {
   margin-block: -2rem -3rem;
 
   & a {
-    color: #000;
+    color: var(--fg);
     text-decoration: none;
 
     &:hover {
-      color: #7A2F00;
+      color: var(--highlight);
     }
   }
 }
 
 #onewheel-eastern {
+  display: block;
   height: max(85dvh, 10rem);
-  width: 100dvw;
+  width: calc(100% - 3px);
 }
