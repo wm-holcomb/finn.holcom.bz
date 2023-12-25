@@ -2,6 +2,8 @@
   --fg: #000;
   --bg: #FFF;
   --highlight: #7A2F00;
+  --shine: var(--bg);
+  --shadow: 0.25rem;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -31,13 +33,21 @@ html, body {
 
 h1 {
   font-family: 'Hillentone';
-  font-size: min(30vh, 15rem);
+  font-size: min(30vh, 15rem, 35vw);
   text-align: center;
-  margin-block: -2rem -3rem;
+  margin-block: -0.75em 0.25em;
+  line-height: 0.75;
+  text-shadow:
+    var(--shadow) var(--shadow) 0 var(--shine),
+    calc(-1 * var(--shadow)) var(--shadow) 0 var(--shine),
+    calc(-1 * var(--shadow)) calc(-1 * var(--shadow)) 0 var(--shine),
+    var(--shadow) calc(-1 * var(--shadow)) 0 var(--shine)
+  ;
 
   & a {
     color: var(--fg);
     text-decoration: none;
+    transition: all 0.25s ease-in-out;
 
     &:hover {
       color: var(--highlight);
